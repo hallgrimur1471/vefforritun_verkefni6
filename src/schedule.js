@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 
 const baseURL = ''; // Sækja úr environment breytu
