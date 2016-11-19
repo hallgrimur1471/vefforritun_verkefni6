@@ -3,4 +3,5 @@ extends layout
 block content
   h1= title
   p Welcomes! to #{title}
-  p= JSON.stringify(channels)
+  each channel in channels
+      p= channel.name

@@ -5,7 +5,14 @@ const schedule = require('./schedule.js');
 router.get('/', (req, res) => {
     schedule.channels()
     .then((result) => {
-        console.log(result.data);
+        console.log(result.data.results[0].channels);
+        //const obj = JSON.parse(result.data);
+        //console.log('!!!!!!!!!!!!!!!!!!!!!!!');
+        //console.log(obj.results);
+        res.render('index', {
+            title: 'Sjónvarpsstöðvar',
+            channels: result.data.results[0].channels
+        })
     })
     .catch((error) => {
         console.log(error);
