@@ -1,7 +1,9 @@
 const axios = require('axios');
 
-const baseURL = 'http://apis.is'; // Sækja úr environment breytu
-const instance = axios.create({ baseURL });
+const envURL = process.env.API_URL;
+const defaultURL = 'http://apis.is';
+const url = envURL || defaultURL;
+const instance = axios.create({ baseURL: url });
 
 /**
  * Fetches all available channels from endpoint, returns a promise that when
