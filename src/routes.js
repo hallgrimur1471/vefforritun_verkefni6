@@ -12,7 +12,10 @@ router.get('/', (req, res) => {
     });
   })
   .catch((error) => {
-    res.render('error', { title: 'Oh no!', error });
+    res.render('error', {
+      title: 'Oh no!',
+      message: 'An unexpected error occured when making your request, '
+             + 'perhaps you can try again later.' });
   });
 });
 
@@ -29,7 +32,7 @@ router.get('/tv/:namez', (req, res, next) => {
   .catch((error) => {
     res.render('error', {
       title: 'Oh no!',
-      message: 'An unexpected error occured when making your request,'
+      message: 'An unexpected error occured when making your request, '
              + 'perhaps you can try again later.' });
   });
 });
