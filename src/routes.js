@@ -20,6 +20,7 @@ router.get('/tv/:namez', (req, res, next) => {
   const channelName = req.params.namez;
   schedule.channel(channelName)
   .then((result) => {
+    console.log(result.data.results[0]);
     res.render('channel', {
       channelName,
       schedules: result.data.results,

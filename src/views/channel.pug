@@ -1,23 +1,17 @@
 extends layout
 
 block content
-  h1= channelName
-  p Welcomes! to #{channelName}
+  h1= 'Dagskrá'
   each schedule in schedules
     h2= schedule.title
-    p= schedule.duration
-    p= schedule.description
-    p= schedule.shortDescription
-    p= schedule.live
-    p= schedule.premire
-    p= schedule.startTime
-    p= schedule.aspectRatio
-    p= schedule.series.episode
-    p= schedule.series.series
-
-  //
-    ul
-    each concert in concerts
-        h2: a(href='/event/' + concert.eventDateName)= concert.eventDateName
-        p= concert.dateOfShow
-        img(src=concert.imageSource)
+    p= 'Byrjar: ' + schedule.startTime
+    if schedule.duration
+      p= 'Tími: ' + schedule.duration
+    if schedule.shortDescription
+      p= 'Stutt lýsing: ' + schedule.shortDescription
+    if schedule.description
+      p= 'Lýsing: ' + schedule.description
+    if schedule.series.episode
+      p= 'Þáttur: ' + schedule.series.episode
+    if schedule.series.series
+      p= 'Sería: ' + schedule.series.series

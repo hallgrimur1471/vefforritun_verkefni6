@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcomes! to #{title}
+  p Veldu stöð til að sjá dagskrá.
   each channel in channels
       h2: a(href=channel.endpoint)= channel.name
 
