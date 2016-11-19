@@ -5,7 +5,7 @@ const schedule = require('./schedule.js');
 router.get('/', (req, res) => {
     schedule.channels()
     .then((result) => {
-        console.log(result);
+        console.log(result.data);
     })
     .catch((error) => {
         console.log(error);
@@ -17,18 +17,18 @@ module.exports = router;
 
 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    concerts()
-    .then((result) => {
-      console.log(result);
-        res.render('index', { title: 'Tónleikar', concerts: result.data.results });
-    })
-    .catch((error) => {
-      console.log(error);
-      res.render('error', { title: 'Oh no!', error });      
-    });
-});
+///* GET home page. */
+//router.get('/', function(req, res, next) {
+//    concerts()
+//    .then((result) => {
+//      console.log(result);
+//        res.render('index', { title: 'Tónleikar', concerts: result.data.results });
+//    })
+//    .catch((error) => {
+//      console.log(error);
+//      res.render('error', { title: 'Oh no!', error });      
+//    });
+//});
 
 
 
@@ -38,6 +38,6 @@ router.get('/', function(req, res, next) {
 
 
 
-    schedule.channels().then((result) => {
-        res.render('index', {title: 'Channels', channels: result.data.results});
-    });
+//schedule.channels().then((result) => {
+//res.render('index', {title: 'Channels', channels: result.data.results});
+//});
