@@ -7,7 +7,7 @@
 6 silly lifecycle verkefni6@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle verkefni6@0.0.0~start: verkefni6@0.0.0
 8 verbose lifecycle verkefni6@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle verkefni6@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/hallgrimur1471/hi/vefforritun/verkefni6/gogn/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+9 verbose lifecycle verkefni6@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/hallgrimur1471/hi/vefforritun/verkefni6/gogn/node_modules/.bin:/home/hallgrimur1471/github/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-4_9-2015q3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/hallgrimur1471/.local/bin
 10 verbose lifecycle verkefni6@0.0.0~start: CWD: /home/hallgrimur1471/hi/vefforritun/verkefni6/gogn
 11 silly lifecycle verkefni6@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle verkefni6@0.0.0~start: Returned: code: 1  signal: null

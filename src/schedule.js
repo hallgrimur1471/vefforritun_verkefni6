@@ -23,7 +23,7 @@ function channels() {
  * @returns {Promise} - Promise with schedule for channel when resolved
  */
 function channel(name) {
-
+    return instance.get('/tv/'+name);
 }
 
 module.exports = {

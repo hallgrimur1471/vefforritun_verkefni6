@@ -4,4 +4,12 @@ block content
   h1= title
   p Welcomes! to #{title}
   each channel in channels
-      p= channel.name
+      h2: a(href='/channel' + channel.endpoint)= channel.name
+
+
+  //
+    ul
+    each concert in concerts
+        h2: a(href='/event/' + concert.eventDateName)= concert.eventDateName
+        p= concert.dateOfShow
+        img(src=concert.imageSource)

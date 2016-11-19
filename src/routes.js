@@ -6,16 +6,31 @@ router.get('/', (req, res) => {
     schedule.channels()
     .then((result) => {
         console.log(result.data.results[0].channels);
-        //const obj = JSON.parse(result.data);
-        //console.log('!!!!!!!!!!!!!!!!!!!!!!!');
-        //console.log(obj.results);
         res.render('index', {
             title: 'Sjónvarpsstöðvar',
-            channels: result.data.results[0].channels
+            channels: result.data.results[0].channels,
         })
     })
     .catch((error) => {
         console.log(error);
+        res.render('error', { title: 'Oh no!', error });  
+    });
+});
+
+router.get('/channel/tv/:namez', function(req, res, next) {
+    console.log('REQ.PARAMS\n' + req.params.namez);
+    const channelName = req.params.namez;
+    schedule.channel(channelName)
+    .then((result) => {
+        console.log(result.data.results);
+        res.render('channel', {
+            channelName: channelName,
+            schedules: result.data.results
+        })
+    })
+    .catch((error) => {
+        console.log(error);
+        res.render('error', { title: 'Oh no!', error });
     });
 });
 
