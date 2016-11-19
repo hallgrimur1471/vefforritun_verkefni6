@@ -4,7 +4,7 @@ block content
   h1= title
   p Welcomes! to #{title}
   each channel in channels
-      h2: a(href='/channel' + channel.endpoint)= channel.name
+      h2: a(href=channel.endpoint)= channel.name
 
 
   //

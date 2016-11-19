@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/channel/tv/:namez', function(req, res, next) {
-    console.log('REQ.PARAMS\n' + req.params.namez);
+router.get('/tv/:namez', function(req, res, next) {
+    //console.log('REQ.PARAMS\n' + req.params.namez);
     const channelName = req.params.namez;
     schedule.channel(channelName)
     .then((result) => {
@@ -29,8 +29,10 @@ router.get('/channel/tv/:namez', function(req, res, next) {
         })
     })
     .catch((error) => {
-        console.log(error);
-        res.render('error', { title: 'Oh no!', error });
+        console.log(error.response.status);
+        res.render('error', {
+            title: 'Oh no!',
+            message: 'An unexpected error occured when making your request, perhaps you can try again later.' });
     });
 });
 
